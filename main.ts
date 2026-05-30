@@ -1,10 +1,10 @@
 radio.onReceivedString(function (receivedString) {
-    if (receivedString == "Open") {
+    if (receivedString == "Up") {
         if (angle > 0) {
             angle += -1
             maqueen.servoRun(maqueen.Servos.S1, angle)
         }
-    } else if (receivedString == "Close") {
+    } else if (receivedString == "Down") {
         if (angle < 180) {
             angle += 1
             maqueen.servoRun(maqueen.Servos.S1, angle)
@@ -33,6 +33,7 @@ radio.onReceivedValue(function (name, value) {
     }
 })
 let angle = 0
-radio.setGroup(1)
+basic.showIcon(IconNames.Angry)
 angle = 90
 maqueen.servoRun(maqueen.Servos.S1, angle)
+radio.setGroup(1)
